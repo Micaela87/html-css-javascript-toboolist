@@ -1,10 +1,10 @@
-const newTask = document.getElementById('new_task');
-const today = document.getElementById('today');
-const upcoming = document.getElementById('upcoming');
+const newTask = document.getElementsByTagName('h2')[0];
+const today = document.getElementsByTagName('h2')[1];
+const upcoming = document.getElementsByTagName('h2')[2];
 
-const menuNewTasks = document.getElementById('list_new_task');
-const menuTodayTasks = document.getElementById('list_today');
-const menuUpcomingTasks = document.getElementById('list_upcoming');
+const menuNewTasks = document.getElementsByTagName('ul')[0];
+const menuTodayTasks = document.getElementsByTagName('ul')[1];
+const menuUpcomingTasks = document.getElementsByTagName('ul')[2];
 
 const showMenu = (element) => {
     if (element.style.display === 'none') {
