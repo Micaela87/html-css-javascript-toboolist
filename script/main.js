@@ -33,25 +33,23 @@ today.addEventListener('click', function() {
 
 upcoming.addEventListener('click', function() {
     showMenu(menuUpcomingTasks)
-});
+}); 
 
 // seleziona elementi con classe not_done
 
-const firstNotDone = document.getElementsByClassName('not_done')[0];
-const secondNotDone = document.getElementsByClassName('not_done')[1];
+const notDone = document.querySelectorAll('li');
 
-// converte X in spunta
+// converte X in spunta e viceversa
 
-const removeCross = (element) => {
-    element.classList.remove('not_done')
+const changeSymbol = (element) => {
+    element.classList.contains('not_done') ? element.classList.remove('not_done') : element.classList.add('not_done');
 };
 
-// eventi click su classe not_done
+// eventi click su li
 
-firstNotDone.addEventListener('click', function() {
-    removeCross(firstNotDone)
+notDone.forEach(function(n) {
+    n.addEventListener('click', function() {
+        changeSymbol(n)
+    });
 });
 
-secondNotDone.addEventListener('click', function() {
-    removeCross(secondNotDone)
-});
