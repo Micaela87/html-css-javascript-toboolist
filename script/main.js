@@ -1,10 +1,16 @@
+// seleziona elementi h2
+
 const newTask = document.getElementsByTagName('h2')[0];
 const today = document.getElementsByTagName('h2')[1];
 const upcoming = document.getElementsByTagName('h2')[2];
 
+// seleziona liste
+
 const menuNewTasks = document.getElementsByTagName('ul')[0];
 const menuTodayTasks = document.getElementsByTagName('ul')[1];
 const menuUpcomingTasks = document.getElementsByTagName('ul')[2];
+
+// visualizza/nasconde liste
 
 const showMenu = (element) => {
     element.style.display === 'none' ? element.style.display = 'block' : element.style.display = 'none';
@@ -14,6 +20,8 @@ const showMenu = (element) => {
         element.style.display = 'none';
     }; */
 };
+
+// eventi click su h2
 
 newTask.addEventListener('click', function() {
     showMenu(menuNewTasks)
