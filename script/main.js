@@ -7,11 +7,12 @@ const menuTodayTasks = document.getElementsByTagName('ul')[1];
 const menuUpcomingTasks = document.getElementsByTagName('ul')[2];
 
 const showMenu = (element) => {
-    if (element.style.display === 'none') {
+    element.style.display === 'none' ? element.style.display = 'block' : element.style.display = 'none';
+    /* if (element.style.display === 'none') {
         element.style.display = 'block';
     } else {
         element.style.display = 'none';
-    };
+    }; */
 };
 
 newTask.addEventListener('click', function() {
