@@ -34,3 +34,24 @@ today.addEventListener('click', function() {
 upcoming.addEventListener('click', function() {
     showMenu(menuUpcomingTasks)
 });
+
+// seleziona elementi con classe not_done
+
+const firstNotDone = document.getElementsByClassName('not_done')[0];
+const secondNotDone = document.getElementsByClassName('not_done')[1];
+
+// converte X in spunta
+
+const removeCross = (element) => {
+    element.classList.remove('not_done')
+};
+
+// eventi click su classe not_done
+
+firstNotDone.addEventListener('click', function() {
+    removeCross(firstNotDone)
+});
+
+secondNotDone.addEventListener('click', function() {
+    removeCross(secondNotDone)
+});
