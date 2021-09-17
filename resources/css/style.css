@@ -23,8 +23,8 @@ header {
     margin: 0 1px 0 10px;
 }
 
-/* conteiner */
-.conteiner {
+/* container */
+.container {
     background-color: white;
     width: 80%;
     margin: 30px auto;
@@ -47,7 +47,7 @@ h2::before {
     padding: 0 6px 0 3px;
 }
 
-.conteiner_pulsanti {
+.container_pulsanti {
     border-bottom: solid 1px rgb(225,225,225);
 }
 
