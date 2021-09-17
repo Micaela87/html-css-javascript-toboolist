@@ -35,7 +35,7 @@ upcoming.addEventListener('click', function() {
     showMenu(menuUpcomingTasks)
 }); 
 
-// seleziona elementi con classe not_done
+// seleziona elementi li
 
 const notDone = document.querySelectorAll('li');
 
