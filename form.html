@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resources/css/style.css">
+    <link rel="stylesheet" href="./resources/css/form.css">
+    <title>Toboolist Form</title>
+</head>
+<body>
+    <!-- intestazione -->
+    <header>
+        <img id="logo" src="./resources/img/Logo.png" alt="logo">
+        <h1>Toboolist</h1>
+    </header>
+    <div class="clearfix">
+        <!-- add task -->
+        <section class="col">
+            <form action="" method="POST">
+                <!-- new task -->
+                <section class="nuovo_compito task">
+                    <h3>Add here your new Task</h3>
+                    <input type="text-area" id="new-task" name="task" required>
+                </section>
+                
+                <!-- task status -->
+                <section class="nuovo_compito status">
+                    <h3>Select Status</h3>
+                    <input type="radio" id="spunta" name="status">
+                    <label for="spunta">Done</label>
+                    <input type="radio" id="croce" name="status">
+                    <label id="cross" for="croce">Not Done</label>
+                </section>
+                
+                <!-- task section -->
+                <section class="nuovo_compito section">
+                    <h3>Select Section</h3>
+                    <input type="checkbox" id="new" name="section">
+                    <label for="new">New Task</label>
+                    <input type="checkbox" id="today" name="section">
+                    <label for="today">Today</label>
+                    <input type="checkbox" id="upcoming" name="section">
+                    <label for="upcoming">Upcoming</label>
+                </section>
+                <!-- pulsante submit -->
+                <section class="nuovo_compito submit">
+                    <input type="submit">
+                </section>
+            </form>
+        </section>
+        <!-- add section -->
+        <section class="col">
+            
+        </section>
+    </div>
+</body>
+</html>

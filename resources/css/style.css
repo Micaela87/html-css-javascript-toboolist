@@ -73,7 +73,13 @@ button {
     margin-right: 3px;
 }
 
+.barra_pulsanti a {
+    text-decoration: none;
+    color: white;
+}
+
 /* regole specifiche button */
+
 #add_task {
     background-color: rgb(79, 181, 245);
     color: white;
@@ -84,6 +90,10 @@ button {
     color: lightgrey;
     border: solid 1px lightgrey;
     background-color: white;
+}
+
+#add_section a {
+    color: lightgrey;
 }
 
 /* regole generali liste */

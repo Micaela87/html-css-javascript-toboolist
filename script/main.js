@@ -7,11 +7,6 @@ const tasks = document.querySelectorAll('h2');
 
 const showMenu = (element) => {
     element.style.display === 'none' ? element.style.display = 'block' : element.style.display = 'none';
-    /* if (element.style.display === 'none') {
-        element.style.display = 'block';
-    } else {
-        element.style.display = 'none';
-    }; */
 };
 
 // eventi click su h2
