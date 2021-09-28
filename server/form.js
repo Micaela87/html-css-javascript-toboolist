@@ -3,15 +3,17 @@ const express = require('express');
 const bodyParser = express.json();
 const errorhandler = require('errorhandler');
 const morgan = require('morgan');
+const cors = require('cors');
 const app = express();
 
 app.use(bodyParser);
-app.use(errorhandler());
+app.use(errorhandler);
 app.use(morgan('dev'));
+app.use(cors);
 
 const sqlite3 = require('sqlite3');
 
-const db = new sqlite3.Database('./database.sqlite');
+const db = new sqlite3.Database('../database.sqlite');
 
 app.post('/', (req, res, next) => {
     const task = req.body.task,
