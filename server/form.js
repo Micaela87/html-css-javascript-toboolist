@@ -1,52 +1,38 @@
 const express = require('express');
-
-const bodyParser = express.json();
-const errorhandler = require('errorhandler');
-const morgan = require('morgan');
-const cors = require('cors');
-const app = express();
-
-app.use(bodyParser);
-app.use(errorhandler);
-app.use(morgan('dev'));
-app.use(cors);
-
 const sqlite3 = require('sqlite3');
+const bodyParser = require('body-parser');
 
-const db = new sqlite3.Database('../database.sqlite');
+const form = express.Router();
+const db = new sqlite3.Database(process.env.TEST_DATABASE || '../database.sqlite');
+form.use(express.json());
+form.use(express.urlencoded({
+    extended: true,
+    type: "application/json"
+}));
 
-app.post('/', (req, res, next) => {
-    const task = req.body.task,
-        status = req.body.status,
-        section = req.body.section,
-        etichetta = req.body.etichetta;
-    if (!task || !status || !section || !etichetta) {
-        return res.sendStatus(400)
-    }
-    db.run('INSERT INTO New_Task (task, status, section, etichetta) VALUES ($task, $status, $section, $etichetta)', {
+form.post('/', (req, res, next) => {
+    const task = req.body.task;
+    const status = req.body.status;
+    const section = req.body.section;
+    const tag = req.body.tag;
+    db.run('INSERT INTO New_Tasks (task, status, section, etichetta) VALUES ($task, $status, $section, $tag)',
+    {
         $task: task,
         $status: status,
         $section: section,
-        $etichetta: etichetta
+        $tag: tag
     }, function(error) {
         if (error) {
-            next(error)
+            next(error);
         } else {
-            db.get('SELECT * FROM New_Task WHERE New_Task.id = $id', {
+            db.get('SELECT * FROM New_Tasks WHERE New_Tasks.id = $id', {
                 $id: this.lastID
             }, (error, task) => {
-                if (error) {
-                    next(error)
-                } else {
-                    res.status(201).json({ task: task })
-                }
+                    res.status(201).json( {task: task} )
             })
         }
-    })
+    }
+    )
 });
 
-const PORT = process.env.PORT || 4001;
-
-app.listen(PORT, () => {
-    console.log(`Server listening on Port ${PORT}`)
-});
+module.exports = form;

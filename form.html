@@ -17,48 +17,48 @@
     <div class="clearfix">
         <!-- add task -->
         <section class="col">
-            <form action="http://localhost:4001/server/form" method="POST">
+            <form name="task" action="http://localhost:4001/form" method="POST">
 
                 <!-- new task -->
                 <section class="nuovo_compito">
                     <h3>Add here your new Task</h3>
-                    <input type="text-area" id="new-task" name="task" required>
+                    <textarea type="text" id="new-task" name="task" value="" required></textarea>
                 </section>
                 
                 <!-- task status -->
                 <section class="nuovo_compito status">
                     <h3>Select Status</h3>
-                    <input type="radio" id="spunta" name="status">
+                    <input type="radio" id="spunta" name="status" value="done">
                     <label for="spunta">Done</label>
-                    <input type="radio" id="croce" name="status">
+                    <input type="radio" id="croce" name="status" value="not done">
                     <label id="cross" for="croce">Not Done</label>
                 </section>
                 
                 <!-- task section -->
                 <section class="nuovo_compito section">
                     <h3>Select Section</h3>
-                    <input type="radio" id="new" name="section">
+                    <input type="radio" id="new" name="section" value="new task">
                     <label for="new">New Task</label>
-                    <input type="radio" id="today" name="section">
+                    <input type="radio" id="today" name="section" value="today">
                     <label for="today">Today</label>
-                    <input type="radio" id="upcoming" name="section">
+                    <input type="radio" id="upcoming" name="section" value="upcoming">
                     <label for="upcoming">Upcoming</label>
                 </section>
 
                 <!-- add lebel -->
                 <section class="nuovo_compito etichetta">
                     <h3>Add your label</h3>
-                    <input type="checkbox" id="editorial" name="tag">
+                    <input type="checkbox" id="editorial" name="tag" value="editorial">
                     <label for="editorial">Editorial</label>
-                    <input type="checkbox" id="sales" name="tag">
+                    <input type="checkbox" id="sales" name="tag" value="sales">
                     <label for="sales">Sales</label>
-                    <input type="checkbox" id="q1_goals" name="tag">
+                    <input type="checkbox" id="q1_goals" name="tag" value="q1 goals">
                     <label for="q1_golas">Q1 Goals</label> <br>
-                    <input type="checkbox" id="recruiting" name="tag">
+                    <input type="checkbox" id="recruiting" name="tag" value="recruiting">
                     <label for="recruiting">Recruiting</label>
-                    <input type="checkbox" id="website" name="tag">
+                    <input type="checkbox" id="website" name="tag" value="website">
                     <label for="website">Website</label>
-                    <input type="checkbox" id="mobile" name="tag">
+                    <input type="checkbox" id="mobile" name="tag" value="mobile">
                     <label for="mobile">Mobile</label>
                 </section>
 
