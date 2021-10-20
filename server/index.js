@@ -12,7 +12,6 @@ app.use(errorhandler());
 app.use(morgan('dev'));
 app.use(express.urlencoded({
     extended: true,
-    type: "application/json"
 }));
 
 app.use('/form', form);
