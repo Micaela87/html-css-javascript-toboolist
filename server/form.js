@@ -3,12 +3,23 @@ const sqlite3 = require('sqlite3');
 const bodyParser = require('body-parser');
 
 const form = express.Router();
-const db = new sqlite3.Database(process.env.TEST_DATABASE || '../database.sqlite');
+const db = new sqlite3.Database('../database.sqlite');
 form.use(express.json());
 form.use(express.urlencoded({
     extended: true,
     type: "application/json"
 }));
+
+form.get('/', (req, res, next) => {
+    db.get('SELECT * FROM New_Tasks ORDER BY id DESC LIMIT 1', (error, task) => {
+        if (error) {
+            next(error)
+        } else {
+            console.log({task: task})
+            res.status(200).json( {task: task} )
+        }
+    })
+})
 
 form.post('/', (req, res, next) => {
     const task = req.body.task;
@@ -25,11 +36,7 @@ form.post('/', (req, res, next) => {
         if (error) {
             next(error);
         } else {
-            db.get('SELECT * FROM New_Tasks WHERE New_Tasks.id = $id', {
-                $id: this.lastID
-            }, (error, task) => {
-                    res.status(201).json( {task: task} )
-            })
+            res.redirect('http://localhost:4001/confirmation.html')
         }
     }
     )
