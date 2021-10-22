@@ -1,0 +1,46 @@
+section {
+    padding: 0;
+}
+
+.clearfix {
+    margin: 30px auto;
+    width: 80%;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.col {
+    float: left;
+    width: 46%;
+    margin: 0 2%;
+    background-color: white;
+    border-radius: 5px;
+    height: fit-content;
+}
+
+form {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.5;
+}
+
+h3 {
+    padding-bottom: 10px;
+}
+
+.nuovo_compito {
+    padding: 20px 0 10px 0;
+}
+
+.status label, .section label, .etichetta label {
+    margin-right: 10px;
+}
+
+.submit {
+    padding-bottom: 20px;
+}

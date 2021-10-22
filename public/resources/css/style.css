@@ -1,0 +1,160 @@
+/* regolegenerali di stile */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(225,225,225);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* header */
+header {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    height: 80px;
+}
+
+#logo, h1 {
+    margin: 0 1px 0 10px;
+}
+
+/* container */
+.container {
+    background-color: white;
+    width: 80%;
+    margin: 30px auto;
+    border-radius: 5px;
+}
+
+/* regole generali section */
+section {
+    padding: 0 0 25px 35px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+h2::before {
+    content: '\25BC';
+    font-size: 10px;
+    margin: 3px;
+    padding: 0 6px 0 3px;
+}
+
+.container_pulsanti {
+    border-bottom: solid 1px rgb(225,225,225);
+}
+
+#new_task {
+    padding-top: 25px;
+}
+
+/* regole generali button */
+.barra_pulsanti {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: 0 0 0 35px;
+}
+
+button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    margin-right: 3px;
+}
+
+.barra_pulsanti a {
+    text-decoration: none;
+    color: white;
+}
+
+/* regole specifiche button */
+
+#add_task {
+    background-color: rgb(79, 181, 245);
+    color: white;
+    border: solid 1px white;
+}
+
+#add_section {
+    color: lightgrey;
+    border: solid 1px lightgrey;
+    background-color: white;
+}
+
+#add_section a {
+    color: lightgrey;
+}
+
+/* regole generali liste */
+ul {
+    margin-left: 3px;
+}
+
+li {
+    line-height: 2;
+    list-style-type: none;
+    font-size: 15px;
+}
+
+li:before {
+    content: '\2713';
+    color: green;
+    padding: 2px 5px;
+    border: solid 1px green;
+    border-radius: 50%;
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+/* regole specifiche liste */
+.not_done:before {
+    content: '\2717';
+    color: red;
+    border-color: red;
+}
+
+/* regole generali tag */
+.tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    color: white;
+    font-size: 10px;
+    vertical-align: middle;
+}
+
+/* regole specifiche tag */
+.editorial {
+    background-color: rgb(79, 181, 245);
+}
+
+#q1_goals {
+    background-color: rgb(128, 81, 150);
+}
+
+#recruiting {
+    background-color: teal;
+}
+
+#mobile {
+    background-color: orange;
+}
+
+#website {
+    background-color: violet;
+}
+
+#sales {
+    background-color: yellowgreen;
+}
