@@ -1,14 +1,8 @@
 const express = require('express');
 const sqlite3 = require('sqlite3');
-const bodyParser = require('body-parser');
 
 const form = express.Router();
 const db = new sqlite3.Database('database.sqlite');
-form.use(express.json());
-form.use(express.urlencoded({
-    extended: true,
-    type: "application/json"
-}));
 
 form.get('/', (req, res, next) => {
     db.get('SELECT * FROM New_Tasks ORDER BY id DESC LIMIT 1', (error, task) => {
@@ -22,24 +16,26 @@ form.get('/', (req, res, next) => {
 })
 
 form.post('/', (req, res, next) => {
-    const task = req.body.task;
-    const status = req.body.status;
-    const section = req.body.section;
-    const tag = req.body.tag;
-    db.run('INSERT INTO New_Tasks (task, status, section, etichetta) VALUES ($task, $status, $section, $tag)',
-    {
-        $task: task,
-        $status: status,
-        $section: section,
-        $tag: tag
-    }, function(error) {
-        if (error) {
-            next(error);
-        } else {
-            res.redirect('http://localhost:4001/confirmation.html')
-        }
+    const task = req.body.task,
+        status = req.body.status
+        section = req.body.section,
+        tag = req.body.tag;
+    if (task && status && section && tag) {
+        db.run('INSERT INTO New_Tasks (task, status, section, etichetta) VALUES ($task, $status, $section, $tag)',
+            {
+                $task: task,
+                $status: status,
+                $section: section,
+                $tag: tag
+            }, function(error) {
+                if (error) {
+                    next(error);
+                } else {
+                    res.redirect('http://localhost:4001/confirmation.html')
+                }
+            }
+        );
     }
-    )
 });
 
 module.exports = form;
