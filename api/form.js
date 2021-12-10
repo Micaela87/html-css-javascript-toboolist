@@ -16,12 +16,12 @@ form.get('/', (req, res, next) => {
 })
 
 form.post('/', (req, res, next) => {
-    const task = req.body.task,
-        status = req.body.status
-        section = req.body.section,
-        tag = req.body.tag;
-    if (task && status && section && tag) {
-        db.run('INSERT INTO New_Tasks (task, status, section, etichetta) VALUES ($task, $status, $section, $tag)',
+    const task = req.body.task;
+    console.log(req.body);
+    const status = req.body.status;
+    const section = req.body.section;
+    const tag = req.body.tag;
+    db.run('INSERT INTO New_Tasks (task, status, section, etichetta) VALUES ($task, $status, $section, $tag)',
             {
                 $task: task,
                 $status: status,
@@ -35,7 +35,6 @@ form.post('/', (req, res, next) => {
                 }
             }
         );
-    }
 });
 
 module.exports = form;

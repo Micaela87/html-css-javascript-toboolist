@@ -2,7 +2,7 @@
   "name": "toboolist",
   "version": "1.0.0",
   "description": "",
-  "main": "form.js",
+  "main": "server.js",
   "scripts": {
     "test": "mocha"
   },
