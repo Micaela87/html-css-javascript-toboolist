@@ -1,2 +1,2 @@
 # html-css-javascript-toboolist
- esercizio html css javascript
+ an interactive front and back-end web app with vanilla javascript, node.js and express
