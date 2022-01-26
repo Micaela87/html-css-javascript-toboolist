@@ -1,6 +1,7 @@
 const cors = require('cors');
 const errorhandler = require('errorhandler');
 const express = require('express');
+const path = require('path');
 
 const api = require('./api/api');
 
@@ -17,7 +18,7 @@ app.use('/api', api);
 
 app.use(errorhandler());
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(PORT, () => {
   console.log('Listening on port: ' + PORT);

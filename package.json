@@ -1,10 +1,11 @@
 {
   "name": "toboolist",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "esercizio html css javascript",
+  "main": "./server.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -32,5 +33,13 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "webpack": "^3.5.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Micaela87/html-css-javascript-toboolist.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Micaela87/html-css-javascript-toboolist/issues"
+  },
+  "homepage": "https://github.com/Micaela87/html-css-javascript-toboolist#readme"
 }
